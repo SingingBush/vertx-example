@@ -1,6 +1,8 @@
 Vert.x Example
 ==============
 
+[![Maven](https://github.com/SingingBush/vertx-example/actions/workflows/maven.yml/badge.svg)](https://github.com/SingingBush/vertx-example/actions/workflows/maven.yml)
+
 This example project was put together to evaluate the potential of using Vert.x instead of Spring Boot. Vert.x is a lot more light weight and will boot much faster than a typical Spring application. This will be better in a cloud environment such as AWS where being able to to auto-scale rapidly is important.
 
 | URL | purpose |
@@ -21,6 +23,13 @@ mvn clean compile exec:java
 ```
 mvn clean package
 java -jar target/vertx-example-1.0.0-SNAPSHOT-fat.jar
+```
+
+# Build and run in a local docker container
+
+```
+docker build -t vertx-example .
+docker run -dp 8888:8888 vertx-example
 ```
 
 # Addition Resources

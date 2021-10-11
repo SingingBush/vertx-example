@@ -39,7 +39,7 @@ public class JokeHandler implements Handler<RoutingContext> {
           .putHeader("content-type", "text/plain")
           .end(Json.encode(new JokeResponse(asyncResult.result().body().getString("joke"))));
       } else {
-        log.error("Call to get jokes via http client failed");
+        log.error("Call to get jokes via http client failed", asyncResult.cause());
         //System.err.println("Call to get jokes via http client failed");
         rc.fail(500);
       }
